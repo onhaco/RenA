@@ -4,18 +4,18 @@ logger = logging.getLogger(__name__)
 
 
 class Config:
-    API_ID = int(os.environ.get("API_ID", 12345))
-    API_HASH = os.environ.get("API_HASH")
-    OWNER_ID =  int(os.environ.get("OWNER_ID", ""))
+    API_ID = int(os.environ.get("18087398", 12345))
+    API_HASH = os.environ.get("6336f00b8958a4d8328a97475b6fc6a3")
+    OWNER_ID =  int(os.environ.get("1233583950", ""))
     AUTH_USERS = list(int(i) for i in os.environ.get("AUTH_USERS", "").split(" ")) if os.environ.get("AUTH_USERS", "") else []
     if OWNER_ID not in AUTH_USERS:
         AUTH_USERS.append(OWNER_ID)
     BANNED_USERS = [int(i) for i in os.environ.get("BANNED_USERS", "").split(" ")] if os.environ.get("BANNED_USERS", "") else None
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+    BOT_TOKEN = os.environ.get("5995967384:AAHdm711wSfsqwdzB2eI4pHCr5ogK_jJhWM", "")
     BOT_PASSWORD = os.environ.get("BOT_PASSWORD", "") if os.environ.get("BOT_PASSWORD", "") else None
     CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION") if os.environ.get("CUSTOM_CAPTION", "") else None
     FORCE_SUB = os.environ.get("FORCE_SUB", "") if os.environ.get("FORCE_SUB", "") else None
-    DATABASE_URL = os.environ.get("DATABASE_URL", "")
+    DATABASE_URL = os.environ.get("mongodb+srv://waraichpc:waraichpc@cluster1.bidqlse.mongodb.net/?retryWrites=true&w=majority", "")
     DOWNLOAD_LOCATION = "./DOWNLOADS"
     try:
         TIME_GAP = int(os.environ.get("TIME_GAP", "")) if os.environ.get("TIME_GAP", "") else None
